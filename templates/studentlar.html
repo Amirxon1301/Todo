@@ -2,20 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hamma studentlar royhati</title>
+    <title>Hamma studentlar ro'yhati</title>
 </head>
 <body>
-<br>
-<br>
-<ol>
-    {% for i in studentlar %}
-   <h2> <li><{{i.ism}}</li> </h2>
-
-    {% endfor %}
-
-
-</ol>
-<br>
     <br>
+    <br>
+    <ol>
+        {% for i in students %}
+        <h2><li>{{i.ism}} ({{i.kurs}}-kurs)</li></h2>
+        <a href=""><button>O'chirish</button></a>
+        {% endfor %}
+    </ol>
+<br>
+<br>
 </body>
 </html>

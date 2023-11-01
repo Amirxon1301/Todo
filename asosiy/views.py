@@ -29,5 +29,26 @@ def BitiruvchilarRejalari(request):
     }
     return render(request, 'rejalar.html', data)
 
-# def bitta_talaba(request, son):
-#     if request.GET.get(son):
+def bitta_talaba_rejasi(request, son):
+    data ={
+        "b_t_rejalari" : Reja.objects.filter(student__id=son)
+    }
+    return render(request, 'b_t_rejalari.html', data)
+
+
+def bajarilmagan_rejalar(request):
+    data = {
+        "b_rejalar" : Reja.objects.filter( bajarilgan=False)
+    }
+    return render(request, 'bajarilmagan_rejalar.html', data)
+
+def u_kurslar(request):
+    data = {
+        "k_u_kurslar" : Student.objects.filter(kurs__gt=2)
+    }
+    return render(request, 'k_u_kurslar.html', data)
+
+def reja_ochir(request, son):
+    Reja.objects.get(id=son).delete()
+    return redirect("/rejalar/")
+

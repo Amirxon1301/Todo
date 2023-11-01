@@ -23,4 +23,7 @@ urlpatterns = [
     path('studentlar/', studentlar),
     path('rejalar/', rejalar),
     path('bitiruvchilar_rejalari/', BitiruvchilarRejalari),
+    path('bajarilmagan/', bajarilmagan_rejalar),
+    path('bituruvchilar/', u_kurslar),
+    path('b_t_reja/<int:son>', bitta_talaba_rejasi),
 ]
